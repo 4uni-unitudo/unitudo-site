@@ -212,12 +212,6 @@ footer p {
     padding: 30px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
-    border-top: 4px solid var(--primary-color);
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
 }
 
 .feature-card img {
@@ -261,7 +255,7 @@ footer p {
     text-align: center;
     margin-bottom: 50px;
     font-size: 2.2rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .benefits-grid {
@@ -276,7 +270,6 @@ footer p {
     padding: 30px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border-bottom: 4px solid var(--accent-color);
 }
 
 .benefit-card img {
@@ -446,4 +439,475 @@ button[type="submit"]:hover {
         margin: 5px 0;
         border-radius: 3px;
     }
+}
+
+/* Estilos para cabeçalhos de página */
+.page-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--accent-color);
+}
+
+/* Estilos para a página Sobre */
+.about-story, .about-mission, .team-section {
+    padding: 80px 0;
+}
+
+.about-story .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2, .about-mission h2, .team-section h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.about-mission {
+    background-color: var(--light-gray);
+}
+
+.about-mission h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.mission-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.mission-card {
+    flex: 1;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.mission-card .icon {
+    margin-bottom: 20px;
+}
+
+.mission-card .icon img {
+    height: 70px;
+}
+
+.mission-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.team-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: #666;
+}
+
+/* Estilos para a página de Funcionalidades */
+.feature-detailed {
+    padding: 80px 0;
+}
+
+.feature-detailed .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-image {
+    flex: 1;
+}
+
+.feature-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-content h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.feature-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.feature-list {
+    padding-left: 20px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.feature-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: -5px;
+}
+
+.alt-bg {
+    background-color: var(--light-gray);
+}
+
+.alt-bg .feature-content {
+    order: 2;
+}
+
+.alt-bg .feature-image {
+    order: 1;
+}
+
+/* Estilos para a página de Contato */
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-section .container {
+    display: flex;
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-form-container {
+    flex: 1;
+}
+
+.contact-info h2, .contact-form-container h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.contact-item .icon {
+    margin-right: 15px;
+}
+
+.contact-item .icon img {
+    height: 40px;
+}
+
+.contact-item .text h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.social-contact {
+    margin-top: 40px;
+}
+
+.social-contact h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon img {
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover img {
+    transform: translateY(-5px);
+}
+
+/* Estilos para FAQ */
+.faq-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.toggle-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.faq-answer {
+    padding: 0 20px 20px;
+    display: none;
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+/* Responsividade para as novas seções */
+@media (max-width: 992px) {
+    .about-story .container,
+    .feature-detailed .container,
+    .contact-section .container {
+        flex-direction: column;
+    }
+    
+    .mission-cards {
+        flex-direction: column;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .alt-bg .feature-content,
+    .alt-bg .feature-image {
+        order: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para a página de FAQ */
+.faq-categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.faq-category {
+    padding: 10px 20px;
+    background-color: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.faq-category.active, .faq-category:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.faq-section {
+    padding: 80px 0;
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.toggle-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.faq-answer {
+    padding: 0 20px 20px;
+    display: none;
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+.faq-item.hidden {
+    display: none;
+}
+
+/* Seção CTA na página de FAQ */
+.contact-cta {
+    background-color: var(--light-gray);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact-cta h2 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contact-cta p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+}
+
+.contact-cta .btn {
+    display: inline-block;
+}
+
+/* Responsividade para FAQ */
+@media (max-width: 768px) {
+    .faq-categories {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .faq-category {
+        width: 80%;
+    }
+}
+
+.feature-card,
+.benefit-card,
+.mission-card {
+    /* Outros estilos existentes */
+    border-top: 4px solid var(--primary-color);
+    border-bottom: none; /* Remover qualquer borda inferior existente */
+}
+
+.feature-card:hover,
+.benefit-card:hover,
+.mission-card:hover {
+    transition: transform 0.3s;
+    transform: translateY(-10px);
 }
