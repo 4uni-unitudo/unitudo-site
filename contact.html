@@ -112,18 +112,23 @@
                         document.getElementById('contact-form').addEventListener('submit', function(e) {
                         e.preventDefault();
                         
-                        var formData = new FormData();
-                        formData.append('name', document.getElementById('name').value);
-                        formData.append('email', document.getElementById('email').value);
-                        formData.append('subject', document.getElementById('subject').value);
-                        formData.append('message', document.getElementById('message').value);
+                        // Preparar os dados do formulário como JSON
+                        const formData = {
+                            name: document.getElementById('name').value,
+                            email: document.getElementById('email').value,
+                            subject: document.getElementById('subject').value,
+                            message: document.getElementById('message').value
+                        };
                         
-                        fetch(CONFIG.APPS_SCRIPT_URL, {
+                        // Enviar para a função Netlify
+                        fetch('/.netlify/functions/contact-form', {
                             method: 'POST',
-                            body: formData
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(formData)
                         })
                         .then(response => {
-                            // Verificar se a resposta foi bem-sucedida
                             if (!response.ok) {
                                 throw new Error('Erro no servidor: ' + response.status);
                             }
@@ -147,7 +152,6 @@
                             alert('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.');
                         });
                     });
-
                         </script>
                 </div>
             </div>
