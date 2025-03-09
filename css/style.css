@@ -292,7 +292,7 @@ footer p {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2.2rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .beta-signup > p {
@@ -911,3 +911,11 @@ button[type="submit"]:hover {
     transition: transform 0.3s;
     transform: translateY(-10px);
 }
+
+/* Estilo para o iframe do Google Forms */
+.signup-form-container iframe {
+    border-radius: 10px;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+}
+
