@@ -18,10 +18,11 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="about.html" class="active">Sobre</a></li>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="about.html">Sobre</a></li>
                     <li><a href="features.html">Funcionalidades</a></li>
                     <li><a href="beta.html">Programa Beta</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                     <li><a href="contact.html">Contato</a></li>
                 </ul>
             </nav>
@@ -42,7 +43,7 @@
                     <h2>Informações de Contato</h2>
                     <div class="contact-item">
                         <div class="icon">
-                            <img src="images/email-icon.png" alt="Email">
+                            <img src="images/email.png" alt="Email">
                         </div>
                         <div class="text">
                             <h3>Email</h3>
@@ -51,7 +52,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="icon">
-                            <img src="images/phone-icon.png" alt="Telefone">
+                            <img src="images/phone.png" alt="Telefone">
                         </div>
                         <div class="text">
                             <h3>Telefone</h3>
@@ -60,7 +61,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="icon">
-                            <img src="images/location-icon.png" alt="Endereço">
+                            <img src="images/location.png" alt="Endereço">
                         </div>
                         <div class="text">
                             <h3>Endereço</h3>
@@ -71,13 +72,13 @@
                         <h3>Redes Sociais</h3>
                         <div class="social-icons">
                             <a href="#" class="social-icon">
-                                <img src="images/facebook-color.png" alt="Facebook">
+                                <img src="images/facebook.png" alt="Facebook">
                             </a>
                             <a href="#" class="social-icon">
-                                <img src="images/instagram-color.png" alt="Instagram">
+                                <img src="images/instagram.png" alt="Instagram">
                             </a>
                             <a href="#" class="social-icon">
-                                <img src="images/twitter-color.png" alt="Twitter">
+                                <img src="images/twitter.png" alt="Twitter">
                             </a>
                         </div>
                     </div>
@@ -103,18 +104,65 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
                     </form>
+                    <!--TODO: Autenticar o Gmail para implementar essa funcionalidade -->
+                    <script src="js/config.js"></script>
+                    <script src="js/main.js" defer></script>
+
+                    <script>
+                        document.getElementById('contact-form').addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        var formData = new FormData();
+                        formData.append('name', document.getElementById('name').value);
+                        formData.append('email', document.getElementById('email').value);
+                        formData.append('subject', document.getElementById('subject').value);
+                        formData.append('message', document.getElementById('message').value);
+                        
+                        fetch(CONFIG.APPS_SCRIPT_URL, {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => {
+                            // Verificar se a resposta foi bem-sucedida
+                            if (!response.ok) {
+                                throw new Error('Erro no servidor: ' + response.status);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.result === 'success') {
+                                document.querySelector('.contact-form-container').innerHTML = `
+                                    <div class="success-message">
+                                        <img src="images/mail-sent.png" alt="Sucesso">
+                                        <h3>Mensagem Enviada!</h3>
+                                        <p>Obrigado por entrar em contato. Responderemos sua mensagem em breve.</p>
+                                    </div>
+                                `;
+                            } else {
+                                throw new Error('Resposta inesperada do servidor');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Erro:', error);
+                            alert('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.');
+                        });
+                    });
+
+                        </script>
                 </div>
             </div>
         </section>
-
-        <section class="faq-section">
-            <div class="container">
-                <h2>Perguntas Frequentes</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Quando o aplicativo será lançado oficialmente?</h3>
-                            <span class="toggle-icon">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Estamos planejando o lançamento oficial para o início do próximo semestre letivo. Enquanto isso, você pode se inscrever para o
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 UniTudo. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
